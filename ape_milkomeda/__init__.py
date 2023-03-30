@@ -1,6 +1,7 @@
 from ape import plugins
 from ape.api import NetworkAPI, create_network_type
 from ape.api.networks import LOCAL_NETWORK_NAME
+from ape_test import LocalProvider
 
 from .ecosystem import NETWORKS, Milkomeda, MilkomedaConfig
 from .provider import MilkomedaProvider
@@ -27,4 +28,4 @@ def providers():
     for network_name in NETWORKS:
         yield "milkomeda", network_name, MilkomedaProvider
 
-    yield "milkomeda", LOCAL_NETWORK_NAME, MilkomedaProvider
+    yield "milkomeda", LOCAL_NETWORK_NAME, LocalProvider

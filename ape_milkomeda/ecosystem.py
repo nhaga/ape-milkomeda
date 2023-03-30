@@ -25,12 +25,9 @@ class MilkomedaConfig(PluginConfig):
     c1_testnet: NetworkConfig = milkomeda_config 
     a1: NetworkConfig = milkomeda_config
     a1_testnet: NetworkConfig = milkomeda_config 
-    local: NetworkConfig = milkomeda_config
-    #default_network: str = "c1"
-
+    local: NetworkConfig = NetworkConfig(default_transaction_type=TransactionType.STATIC, default_provider='test')
 
 class Milkomeda(Ethereum):
     @property
     def config(self) -> MilkomedaConfig:  
         return self.config_manager.get_config("milkomeda")
-        #return cast(MilkomedaConfig, self.config_manager.get_config("milkomeda"))
