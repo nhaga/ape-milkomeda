@@ -46,7 +46,7 @@ setup(
     name="ape-milkomeda",
     setup_requires=["setuptools_scm"],
     use_scm_version=True,
-    version='1.0',
+    version='0.1',
     description="""ape-milkomeda: Ape Ecosystem Plugin for Milkomeda""",
     long_description=long_description,
     long_description_content_type="text/markdown",

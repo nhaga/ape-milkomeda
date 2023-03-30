@@ -6,6 +6,7 @@ from ape_test import LocalProvider
 from .ecosystem import NETWORKS, Milkomeda, MilkomedaConfig
 from .provider import MilkomedaProvider
 
+
 @plugins.register(plugins.Config)
 def config_class():
     return MilkomedaConfig
@@ -22,6 +23,7 @@ def networks():
         yield "milkomeda", network_name, create_network_type(*network_params)
 
     yield "milkomeda", LOCAL_NETWORK_NAME, NetworkAPI
+
 
 @plugins.register(plugins.ProviderPlugin)
 def providers():
