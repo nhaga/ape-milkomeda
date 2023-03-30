@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 from setuptools import find_packages, setup  # type: ignore
 
+
 extras_require = {
     "test": [  # `test` GitHub Action jobs uses this
         "pytest>=6.0",  # Core testing package
@@ -44,11 +45,7 @@ with open("./README.md") as readme:
 setup(
     name="ape-milkomeda",
     setup_requires=["setuptools_scm"],
-    use_scm_version={
-        "write_to": "../version.txt",
-        "root": "..",
-        # "relative_to": __file__,
-    },
+    use_scm_version=True,
     version='1.0',
     description="""ape-milkomeda: Ape Ecosystem Plugin for Milkomeda""",
     long_description=long_description,
@@ -58,7 +55,7 @@ setup(
     url="https://github.com/nhaga/ape-milkomeda",
     include_package_data=True,
     install_requires=[
-        "eth-ape>=0.5.2,<0.6",
+        "eth-ape>=0.5.2",
     ],
     python_requires=">=3.8,<3.11",
     extras_require=extras_require,
