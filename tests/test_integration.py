@@ -14,6 +14,7 @@ milkomeda
     └── test  (default)
 """.strip()
 
+
 def assert_rich_text(actual: str, expected: str):
     """
     The output from `rich` causes a bunch of extra spaces to
