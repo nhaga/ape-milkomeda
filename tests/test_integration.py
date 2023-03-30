@@ -1,5 +1,3 @@
-import pytest
-
 EXPECTED_OUTPUT = """
 milkomeda
 ├── c1

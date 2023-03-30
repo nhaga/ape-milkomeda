@@ -1,8 +1,7 @@
-from typing import cast
 from ape.api import ProviderAPI, Web3Provider
-from web3 import HTTPProvider, Web3
 from ape.api.transactions import TransactionAPI
 from ape.exceptions import TransactionError
+from web3 import HTTPProvider, Web3
 
 
 class MilkomedaProvider(Web3Provider, ProviderAPI):

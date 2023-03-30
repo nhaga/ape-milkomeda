@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 from setuptools import find_packages, setup  # type: ignore
 
-
 extras_require = {
     "test": [  # `test` GitHub Action jobs uses this
         "pytest>=6.0",  # Core testing package

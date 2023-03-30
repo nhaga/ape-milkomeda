@@ -1,10 +1,6 @@
-from typing import Optional, cast
-
 from ape.api.config import PluginConfig
-from ape.api.networks import LOCAL_NETWORK_NAME
 from ape_ethereum.ecosystem import Ethereum, NetworkConfig
 from ape_ethereum.transactions import TransactionType
-
 
 NETWORKS = {
     "c1": (2001, 2001),
