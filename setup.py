@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 from setuptools import find_packages, setup  # type: ignore
 
-
 extras_require = {
     "test": [  # `test` GitHub Action jobs uses this
         "pytest>=6.0",  # Core testing package
@@ -46,7 +45,7 @@ setup(
     name="ape-milkomeda",
     setup_requires=["setuptools_scm"],
     use_scm_version=True,
-    version='1.0',
+    version="0.1",
     description="""ape-milkomeda: Ape Ecosystem Plugin for Milkomeda""",
     long_description=long_description,
     long_description_content_type="text/markdown",

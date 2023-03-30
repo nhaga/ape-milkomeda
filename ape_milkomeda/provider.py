@@ -1,11 +1,10 @@
-from typing import cast
 from ape.api import ProviderAPI, Web3Provider
-from web3 import HTTPProvider, Web3
 from ape.api.transactions import TransactionAPI
 from ape.exceptions import TransactionError
+from web3 import HTTPProvider, Web3
+
 
 class MilkomedaProvider(Web3Provider, ProviderAPI):
-
     @property
     def uri(self) -> str:
         rpcs = {
@@ -19,11 +18,9 @@ class MilkomedaProvider(Web3Provider, ProviderAPI):
     def connect(self):
         self._web3 = Web3(HTTPProvider(self.uri))
 
-
     def disconnect(self):
         self._web3 = None
 
-    
     def prepare_transaction(self, txn: TransactionAPI) -> TransactionAPI:
         # NOTE: Use "expected value" for Chain ID, so if it doesn't match actual, we raise
         txn.chain_id = self.network.chain_id
@@ -56,4 +53,3 @@ class MilkomedaProvider(Web3Provider, ProviderAPI):
             raise TransactionError("'required_confirmations' must be a positive integer.")
 
         return txn
-

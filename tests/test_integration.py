@@ -1,24 +1,16 @@
-EXPECTED_OUTPUT_ = """
-polygon
-├── mainnet
-│   └── geth  (default)
-├── mumbai
-│   └── geth  (default)
-└── local  (default)
-    └── test  (default)
-""".strip()
-
-
 EXPECTED_OUTPUT = """
-milkomeda_a1
-├── mainnet
-│   └── geth  (default)
-├── testnet
-│   └── geth  (default)
+milkomeda
+├── c1
+│   └── milkomeda  (default)
+├── c1-testnet
+│   └── milkomeda  (default)
+├── a1
+│   └── milkomeda  (default)
+├── a1-testnet
+│   └── milkomeda  (default)
 └── local  (default)
     └── test  (default)
 """.strip()
-
 
 
 def assert_rich_text(actual: str, expected: str):
@@ -26,9 +18,7 @@ def assert_rich_text(actual: str, expected: str):
     The output from `rich` causes a bunch of extra spaces to
     appear at the end of each line. For easier testing, we remove those here.
     """
-    actual = f"milkomeda_a1{actual.split('milkomeda_a1')[-1]}"
-    if "ethereum" in actual:
-        actual = actual.split("ethereum")[0]
+    actual = f"milkomeda{actual.split('milkomeda')[-1]}"
 
     expected = expected.strip()
     lines = actual.split("\n")
@@ -38,6 +28,7 @@ def assert_rich_text(actual: str, expected: str):
             new_lines.append(line.rstrip())
 
     actual = "\n".join(new_lines)
+    print(actual)
     assert actual == expected
 
 
